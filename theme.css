@@ -1,0 +1,127 @@
+input{
+    height: 35px;
+    width: 400px;   
+    padding-left: 10px;
+    margin-bottom: 30px;
+    margin-left: 40px;
+    border-radius: 5px;
+}
+h1{
+    margin-left: 100px;
+}
+body{
+    margin-top: 10px;
+    display:flex;
+    background: linear-gradient(180deg,rgb(245, 183, 183) 0%,rgb(202, 59, 59) 100%);
+    flex-flow:column;
+}
+#header{
+    font-family: 'Times New Roman', Times, serif;
+    font-style: normal;
+    color: rgb(94, 47, 13);
+    font-size: 50px;
+}
+#box{
+    display: flex;
+    flex-flow: row;
+}
+#vector{
+    margin-left: 20px;
+    background-color: beige;
+    padding: 40px;
+    text-align: unset;
+
+}
+button{
+    background-color: green;
+    height: 40px;
+    width: 150px;
+    font-size: .9em;
+    margin-bottom: 20px;
+    color: aliceblue;
+    border-radius: 5px;
+    margin-right: 40px;
+}
+#form{
+    display: flex;
+    margin-left: 100px;
+    margin-right: 100px;
+    border-radius: 20px;
+    box-shadow: 10px 10px 10p;
+    align-self: auto;
+    padding-top: 10px;
+    background-color:rgba(15, 15, 15, 0.329);    
+    flex-flow: column;
+    align-items: center;
+    align-content: center;
+}
+#upper{
+    float: left;
+}
+img{
+    height: 100px;
+    width: 100px;
+}
+#loader{
+    display:none; 
+}
+
+#overlay{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    text-align: center;
+    right: 0;
+    color: azure;
+    z-index: 2;
+    margin-bottom: 20px;
+    overflow: auto;
+    margin-left: 30px;
+    text-align: center;
+    margin-right: 30px;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    background-color: rgba(0,0,0,0.8); 
+    cursor: pointer;
+}
+#open{
+    font-size: .5em;
+    height: 100px;
+    width: 250px;
+    margin-top: 250px;
+}
+textarea{
+    height: 450px;
+}
+#head li{   
+    list-style-type:none;
+    float:left;
+    margin-right:30px;  
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 1.2em;
+    padding: 5px;
+    border-radius: 5px;
+}
+#head li:hover{
+    color: aqua;
+    font-size: 1.3em;
+}
+
+/*.loader {
+    border: 16px solid #f3f3f3;
+    border-top: 16px solid #3498db;
+    border-radius: 30%;
+    width: 5%;
+    display: none;
+    height: 5%;
+    margin: auto;
+    animation: spin 2s linear infinite;
+  }*/
+  
+  /*@keyframes spin {
+    0% { transform: rotate(0deg); }
+    50%{transform: rotate(360deg)}
+    100% { transform: rotate(0deg); }
+  }*/

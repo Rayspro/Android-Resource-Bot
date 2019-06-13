@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<head>
+    <link href="skeleton.css" type="text/css" rel="stylesheet">
+    <link href="normalize.css" type="text/css" rel="stylesheet">
+    <link href="theme.css" type="text/css" rel="stylesheet">
+   
+</head>
+<body>
+<div id='message'><h1 id='javaToolLocation'></h1><br><h1 id='projectLocation'></h1><br><h1 id='message'></h1></div>        
+<div id='overlay'>
+<h1>
+     <button type="button" id="open" >Select Project Folder</button><br>
+</h1>
+</div>
+    <h1 id="header"><img src="Android-PNG-Photos.png">Android Resource Bot</h1>       
+    
+    <div id="form">
+        <ul id='head'>
+                <li><button type="button" id='new'>New Project</button></li>
+                <li><button type="button" id="tool">Tool</button></li>
+                <li><button type="button" id="keyPath">Set Key Path</button></li>
+                <li><button type="button" id="proSync">Sync Project</button></li>
+        </ul>
+        <form>
+                <div id="upper">
+                        <div id="box">
+                        <input type="text" id="cname" placeholder="Key Name*" required><br>
+                        </div>
+                        <div id="box">
+
+                        <input type="text"  id="exam_name" placeholder="Exam Name*" required><br>
+                        </div>
+                        <div id="box">
+                        
+                                <input type="text"  id="pack_name" placeholder="Pack Name*" required><br>
+                        </div>
+                        <div id="box">
+                        
+                                <input type="number"  id="exam_id" placeholder="Exam Id*" required><br>
+                        </div>
+                        <div id="box">
+                        
+                                <input type="tel"  id="contact" placeholder="Contact No*" value="9410007819" maxlength="10" required><br>
+                        </div>
+                        <div id="box">
+                        
+                                <input type="text"  id="email" placeholder="Email*" value="hello@edugorilla.com" required><br>
+                        </div>
+                        <div id="box">
+                        
+                                <input type="text"  id="app_name" placeholder="App Name*" required><br>
+                        </div>
+                        <div id="box">
+                        
+                                <input type="text"  id="base_url" placeholder="Base URL*" value="testseries.edugorilla.com" required><br>
+                        </div>
+                </div>                
+                <div id="box" class="vector2">
+                      
+                        <textarea rows="31" cols="35" id="vector" required placeholder="Paste Vector Code.."></textarea>
+                </div>                
+        </form>
+        <div id="box0">
+                <button type="button" id="submit"><span id="submitText">Submit</span></button>
+        </div>
+        <div id="box">  
+                <button type="button" id="keygen" ><div class="loader"></div><span id="keyGenrate">Genrate Key</span></button><br>
+                <button type="button" id="reload">New</button>
+                <button type="button" id="save" style="display:none">Save</button>
+        </div>
+    </div>
+</body>
+
+<script src="Mk.js"></script>
+
+</html>
