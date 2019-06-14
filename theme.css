@@ -62,8 +62,26 @@ img{
     height: 100px;
     width: 100px;
 }
+#typeimg1{
+    width: 200px;
+    height: 100px;
+    margin-left: 80px;
+    margin-top: 50px;
+}
+#typeimg2{
+    width: 200px;
+    height: 100px;
+    margin-left: 80px;
+    margin-top: 50px;
+}
 #loader{
     display:none; 
+}
+#type{
+    display: flex;
+    flex-flow: row;
+    margin-right: 30%;
+  
 }
 
 #overlay{
@@ -90,6 +108,8 @@ img{
     font-size: .5em;
     height: 100px;
     width: 250px;
+    margin-left: 20%;
+    margin-right: 80%;
     margin-top: 250px;
 }
 textarea{
@@ -108,7 +128,25 @@ textarea{
     color: aqua;
     font-size: 1.3em;
 }
-
+#typeimg1:hover{
+    z-index: 8;
+    box-shadow: 20px;
+    color: bisque;
+    box-shadow: 10px;
+    animation: spin 2s linear;
+}
+#typeimg2:hover{
+    z-index: 8;
+    box-shadow: 20px;
+    color: bisque;
+    box-shadow: 10px;
+    animation: spin 2s linear;
+}
+@keyframes spin {
+    0% { transform: scale(1.1) }
+    50%{transform: scale(1.1)}
+    100% { transform: scale(1.1)}
+  }
 /*.loader {
     border: 16px solid #f3f3f3;
     border-top: 16px solid #3498db;

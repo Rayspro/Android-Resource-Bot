@@ -1,5 +1,5 @@
  const fs=require('fs');
- const WindowsToaster = require('node-notifier').WindowsToaster;
+ //const WindowsToaster = require('node-notifier').WindowsToaster;
  const appScript=require('child_process');
  const dialog3=require('electron');
  const dialog4=require('electron');
@@ -10,6 +10,27 @@
 });*/
  document.getElementById('keygen').style.visibility='hidden';
  document.getElementById('reload').style.visibility='hidden';
+ let type='';
+
+ //Project Single Selection
+
+ document.getElementById('typeimg1').addEventListener('click',(e)=>{
+     document.getElementById('typeimg2').style.visibility='hidden';
+     localStorage.setItem('type','1');
+     document.getElementById('typeimg1').style.backgroundColor='rgba(255,255,255,0.5)';
+     type='1';
+ });
+
+ //Project Main Selection
+
+ document.getElementById('typeimg2').addEventListener('click',(e)=>{
+    document.getElementById('typeimg1').style.visibility='hidden';
+    localStorage.setItem('type','2');
+    document.getElementById('typeimg2').style.backgroundColor='rgba(255,255,255,0.5)';
+    console.log(localStorage.getItem('type'));
+    type='2';
+});
+
  if(localStorage.getItem('projectPath')!==null){
     document.getElementById('overlay').style.display='none';
 }
@@ -31,6 +52,10 @@
 promiss.then(
 document.getElementById('submit').addEventListener('click',function(e){
     //document.getElementById('submit').disabled=true;
+    type=localStorage.getItem('type');
+    if(type==null){
+        //Show Dialog
+    }
     if(localStorage.getItem('keyPath')===null){
         dialog3.remote.dialog.showMessageBox
     }
@@ -75,19 +100,31 @@ document.getElementById('submit').addEventListener('click',function(e){
                 fs.mkdirSync(resourceDir,{recursive:true});
                 fs.mkdirSync(drawbleDir,{recursive:true});
                 fs.mkdirSync(valueDir,{recursive:true});
-                let stringData='<resources>\n'+
-                '<string name="app_name">'+app_name+'</string>\n'+
-                '<!--Change Here For App Exam Change......-->\n'+
-                '<string name="Exam_id">'+exam_id+'</string>\n'+
-                '<string name="Pack_name">'+pack_name+'</string>\n'+
-                '<string name="Contact_number">+91'+contact+'</string>\n'+
-                '<string name="Email_Us">'+email+'</string>\n'+
-                '<string name="exam_name">'+exam_name+'</string>\n'+
-                '<string name="BASE_URL">http://'+base_url+'</string>\n'+
+                let stringData='';
+                if(type==='1'){
+                    stringData='<resources>\n'+
+                    '<string name="app_name">'+app_name+'</string>\n'+
+                    '<!--Change Here For App Exam Change......-->\n'+
+                    '<string name="Exam_id">'+exam_id+'</string>\n'+
+                    '<string name="Pack_name">'+pack_name+'</string>\n'+
+                    '<string name="Contact_number">+91'+contact+'</string>\n'+
+                    '<string name="Email_Us">'+email+'</string>\n'+
+                    '<string name="exam_name">'+exam_name+'</string>\n'+
+                    '<string name="BASE_URL">http://'+base_url+'</string>\n'+
+                    '</resources>';
+                    fs.writeFile(drawbleDir+"/logo_sqr2.xml",vector,(err)=>{
+                        if(err) throw err;
+                    });
+                }else if(type==='2'){
+                 stringData='<resources>\n'+
+                '<string name="app_name" translatable="false">'+app_name+'</string>\n'+
+                '<string name="intro_text" translatable="false">'+exam_name+'</string>\n'+
+                '<string name="base_url" translatable="false">'+base_url+'</string>\n'+
                 '</resources>';
-                fs.writeFile(drawbleDir+"/logo_sqr2.xml",vector,(err)=>{
+                fs.writeFile(drawbleDir+"/square_logo.xml",vector,(err)=>{
                     if(err) throw err;
                 });
+                }               
                 fs.writeFile(valueDir+"/string.xml",stringData,(err)=>{
                     if(err) throw err;
                 });
